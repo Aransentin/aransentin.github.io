@@ -29,9 +29,9 @@ a{
 
 <p>If you would like to make extremely lean software for the web, C &amp; WebAssembly is one option. Truthfully the only really practical way of doing that has been to use <a href='https://github.com/kripken/emscripten'>Emscripten</a>, emulating a lot of what you expect from a normal C environment in Javascript at the cost of a fair bit of overhead.</p>
 
-<p>If you have a "every byte is precious" attitude like me &ndash; and like to get your hands dirty &ndash; you can certainly do it yourself, as well. This page mostly consists of things I've discovered toying around with just that.</p>
+<p>If you have a "every byte is precious" attitude like me &ndash; and like to get your hands dirty &ndash; you can certainly do it yourself, as well. The available information online is rather sparse, so this page mostly consists of things I've discovered toying around with just that.</p>
 
-<p>I was able to make a "Hello Triangle" WebGL2 demo in 1.6KiB (gzipped) without too much effort (+1.4KiB of JS overhead), so expect to get results around that magnitude for similarly simple tasks.</p>
+<p>I was able to make a "Hello Triangle" WebGL2 demo in 1.6KiB (gzipped, +1.4KiB of JS overhead) without too much effort, so expect to get results around that magnitude for similarly simple tasks.</p>
 
 <h2>Building</h2>
 
@@ -43,7 +43,7 @@ a{
 
 <ul>
     <li><b>-fvisibility hidden</b><br>Prevents all the functions in the source from being exported except the ones we explicitly designate later on.</li>
-    <li><b>-Ofast</b><br>Gotta go fast. This is like <em>-O3</em>, except we assume that a whole bunch of specific floating-point behaviour (e.g.&nbsp;INFs) won't happen &ndash; a lot of it will trap the WebAssembler environment anyway, so there's not much point in taking it into account. Use <em>-O3</em> instead if you care about boring things like standards compliance and preventing undefined behaviour 😉.</li>
+    <li><b>-Ofast</b><br>Gotta go fast. This is like <em>-O3</em>, except we assume that a whole bunch of specific floating-point behaviour (e.g.&nbsp;INFs) won't happen &ndash; a lot of it will trap the WebAssembler environment anyway, so there's not much point in taking it into account. Use <em>-O3</em> instead if you care about boring things like standards compliance and preventing undefined behaviour     &#x1f609;.</li>
 </ul>
 
 <p>Combine all the bitcode into one and optimize it again:</p>
@@ -90,7 +90,7 @@ xhttp.send();
 
 <ul>
     <li><b>imports</b><br>This is a dictionary of functions we will be able to call from inside our WebAssmebly program.</li>
-    <li><b>memory</b><br>Exported from our program instance, this is a typed array of the program memory itself. This will be neccesary to access later.</li>
+    <li><b>memory</b><br>Exported from our program instance, this is a typed array of the program memory itself. This will be necessary to access later.</li>
     <li><b>exports</b><br>A dictionary of C functions that we marked visible. They can now be called like any other JS function.</li>
 </ul>
 
@@ -209,7 +209,7 @@ imports["glDeleteShader"] = function( shader_id ){
 
 <ul>
     <li>Write them ourselves, by e.g. reserving portions of a large buffer allocated statically.</li>
-    <li>Use VLAs instead, putting all working memory on the stack as we go. The things you can do with it is somewhat limited though (no memory resizing, no data persistance when calling a wasm function multiple times).</li>
+    <li>Use VLAs instead, putting all working memory on the stack as we go. The things you can do with it is somewhat limited though (no memory resizing, no data persistence when calling a wasm function multiple times).</li>
 </ul>
 
 <p>In the future there will probably be implementations of <em>malloc</em> written as separate wasm modules that you could link into your own, but no such luck yet.</p>
@@ -221,4 +221,3 @@ imports["glDeleteShader"] = function( shader_id ){
 <h2>Symbol optimization</h2>
 
 <p>The names of the imported &amp; exported symbols are faily large &ndash; comparatively! &ndash; so a potential future optimization would be to write a tool that replaces them with shorter strings (e.g. "_a", "_b" and so on) before compilation, making the program even smaller. </p>
-
