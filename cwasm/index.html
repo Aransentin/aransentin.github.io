@@ -37,7 +37,7 @@ a{
 
 <p>To generate WebAssembly binaries, you need LLVM, clang, and lld. Stable &ndash; 5.0, at the time of writing &ndash; won't cut it, so build it from source. Sadly LTO doesn't work, so we need to fiddle around with the IR.</p>
 
-<p>First, let's turn earch of our C source files into LLVM IR bitcode. This can be done like so:</p>
+<p>First, let's turn each of our C source files into LLVM IR bitcode. This can be done like so:</p>
 
 <pre>clang -cc1 -Ofast -emit-llvm-bc -triple=wasm32-unknown-unknown-wasm -std=c11 -fvisibility hidden src/*\.c</pre>
 
