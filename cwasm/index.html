@@ -42,7 +42,7 @@ a{
 
 <p>If you have a "every byte is precious" attitude like me (and like to get your hands dirty!) you can certainly do it yourself, as well. The available information online is rather sparse, so this page mostly consists of things I've discovered toying around with just that.</p>
 
-<p>I was able to make a <a href='#demo'>WebGL2 demo</a> in 7.1KiB (uncompressed, not counting textures) without too much effort, so expect to get results around that magnitude for tasks of similar complexity.</p>
+<p>I was able to make a <a href='#demo'>WebGL2 demo</a> in 6.2KiB (uncompressed, not counting textures) without too much effort, so expect to get results around that magnitude for tasks of similar complexity.</p>
 
 <h2>Building</h2>
 
@@ -85,7 +85,7 @@ opt -O3 wasm.bc -o wasm.bc</pre>
 let memory = null;
 let exports = null;
 
-let request = await fetch( 'index.html' );
+let request = await fetch( 'binary.wasm' );
 let binary = await request.arrayBuffer();
 
 imports['memory'] = new WebAssembly['Memory']( {'initial':32} );
@@ -226,6 +226,14 @@ imports["glDeleteShader"] = function( shader_id ){
 <h2>Builtins</h2>
 
 <p>Fortunately clang has <a href='https://github.com/llvm-mirror/clang/blob/master/include/clang/Basic/Builtins.def'>a few builtin functions</a>, mostly for string handling, bit twiddling, and trigonometry. To use them you can simply call <em>__builtin_cosf()</em> or the like; you won't need a header or anything. There's no guarantee that LLVM won't just try to insert a call to the non-existant C library function anyway however, so it's probably not something you should rely on outside of simple demos and such.</p>
+
+<h2>Futher optimizations with Binaryen</h2>
+
+<p>The <a href='https://github.com/WebAssembly/binaryen'>Binaryen</a> toolchain includes <em>wasm-opt</em>, a tool that reads WebAssembly, optimizes it, and then spits it out again. It shrinks my program by 10%  or thereabouts, but your mileage may vary.</p>
+
+<pre>wasm-opt -Oz binary.wasm -o binary_opt.wasm</pre>
+
+<p>If you have large buffers allocated statically, LLVM insits on including them verbatim in the binary. wasm-opt will strip it out, so significant gains might be had in that case.</p>
 
 <h2 id=demo>Demo</h2>
 
