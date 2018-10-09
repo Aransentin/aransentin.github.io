@@ -66,7 +66,7 @@ opt -O3 wasm.bc -o wasm.bc</pre>
 
 <pre>llc -O3 -filetype=obj wasm.bc -o wasm.o</pre>
 
-<p>Linking can now be done with lld: </p>
+<p>Linking can now be done with lld.</p>
 
 <pre>wasm-ld --no-entry wasm.o -o binary.wasm --strip-all -allow-undefined-file wasm.syms --import-memory</pre>
 
@@ -76,6 +76,9 @@ opt -O3 wasm.bc -o wasm.bc</pre>
     <li><b>--allow-undefined-file wasm.syms</b><br>We are going to want to call Javascript from our WebAssembly, as well &ndash; <em>wasm.syms</em> contains a list of the names of those functions.</li>
     <li><b>--import-memory</b><br>We'll supply the memory ourselves from Javascript. We need to do so since the flag <em>--inital-memory</em> which we want to use is broken and doesn't seem to do anything.</li>
 </ul>
+
+<p>Note that if you are running a version later than <a href='https://github.com/llvm-mirror/lld/commit/bf5a2d882e292886dd9aa8d54042b6cf62792449'>this commit</a>, you'll need to add "--export-dynamic" as well to prevent wasm-lld stripping absolutely everything.</p>
+
 
 <h2>Running</h2>
 
