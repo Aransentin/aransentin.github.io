@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html lang=en>
+<title>AAR: The Kwisatz Haderach of CK2</title>
+<meta name=viewport content='width=device-width, initial-scale=1'>
+<link rel=icon href=img/ashina.png>
+<style>
+@font-face {
+    font-family: 'Source Serif Pro';
+    font-weight: 400;
+    src: local('Source Serif Pro'), local('SourceSerifPro-Regular'), url(fnt/sserifpro400.woff2) format('woff2');
+}
+@font-face {
+    font-family: 'Source Serif Pro';
+    font-weight: 600;
+    src: local('Source Serif Pro Semibold'), local('SourceSerifPro-Semibold'), url(fnt/sserifpro600.woff2) format('woff2');
+}
+@font-face {
+    font-family: 'Source Code Pro';
+    src: local('Source Code Pro Regular'), local('SourceCodePro-Regular'), url(scodepro400.woff2) format('woff2');
+}
+
+html{
+    font-family: 'Source Serif Pro';
+    font-size: 16px;
+    line-height: 1.5rem;
+    color: #222;
+    padding-bottom: 10rem;
+    overflow-x: hidden;
+}
+@media (max-width: 600px) {
+    html{
+       	font-size: 14px;
+    }
+}
+@media (min-width: 2000px) {
+    html{
+       	font-size: 20px;
+    }
+}
+body{
+    margin: 0 auto;
+    max-width: 80rem;
+    background-color: #f2f2f2;
+    padding: 1rem;
+}
+
+h1{
+    margin: 0;
+    font-weight: 600;
+    font-size: 2.5rem;
+    line-height: 3rem;
+    font-variant: small-caps;
+    text-align: center;
+}
+
+h2{
+    margin: 4rem auto 0 auto;
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 2px solid #333;
+    font-variant: small-caps;
+    max-width: 50rem;
+}
+
+h3{
+    max-width: 50rem;
+    margin: 1rem auto;
+}
+
+section{
+    
+}
+
+li, p{
+    text-align: justify;
+    margin: 1rem auto;
+    max-width: 50rem;
+}
+
+.pic{
+    
+}
+video, img{
+    display: block;
+    max-width: 100%;
+    margin: 2rem auto;
+}
+
+.map_overlay{
+    position: relative;
+}
+.map_icon{
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-left: -0.75rem;
+    margin-top: -0.75rem;
+    background-size: 100%;
+}
+
+.map_icon>span{
+    display: none;
+    position: absolute;
+    text-align: center;
+    bottom: -1rem;
+    line-height: 1rem;
+    left: -4rem;
+    width: 12rem;
+    font-variant: small-caps;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.map_icon:hover{
+    width: 4rem;
+    height: 4rem;
+    margin-left: -2rem;
+    margin-top: -2rem;
+    color: #fff;
+    z-index: 10;
+}
+.map_icon:hover>span{
+    display: block;
+}
+.map_icon:after{
+    display: block;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-image: url(img/artifact_frame.png);
+    background-size: 100%;
+    box-shadow: 0 0 1rem 0.1rem #fff, 0px 0px 2rem 0.2rem #ffd700;
+}
+
+
+</style>
+
+<img src=img/ashina.png>
+<h1>The Kwisatz Haderach of CK2</h1>
+
+<section>
+    <p>How good can you make a single character in CK2 without cheating? Let's find out!</p>
+    <p>First, what do I mean by "cheating" exactly? Let's lay down some ground rules:</p>
+    <ul>
+        <li> No console usage.
+        <li> No manipulating saves or game memory.
+        <li> No mods or modifying game files.
+        <li> The game rules should be achievement-compatible.
+        <li> Exploits are fair game, as long as they are entirely in-game.
+        <li> No egregious save scumming. Keeping backups for replaying sections of the game to test theories and discover optimal gameplay strategies is okay.<p>Note that at the end of this AAR I will need to perform <em>some</em> savescumming for completion's sake to achieve results that would otherwise be impossible to get. By that point I will have completely "won" the game however and nothing else depends on it, so I feel it's okay.</p>
+    </ul>
+    <p>That said, let's begin!</p>
+
+    <p>We'll start as Khagan Baghatur of Khazaria:</p>
+    <img src=img/0.png>
+    <p>There are several reasons for this.</p>
+    <ul>
+        <li> We're a nomad, who are totally overpowered.
+        <li> We start with a bloodline already, which spares us the effort of getting it.
+        <li> Our dynasty has another living branch, which means we can keep a parallel dynasty that won't get our "crafted" bloodlines. Having these people around can be used to farm bloodlines later.
+        <li> We are only 53 years old but have a son, grandson, and great-grandson at the start of the game. This is rather useful for some succession-related exploits I will be using later.
+        <li> We start in the middle of the map, and have a comparatively easy time reaching whomever we want. This is especially important in the early game, as several things we need to do are time-limited &ndash; e.g. important bloodlines will die out if you're not quick.
+    </ul>
+
+    <p>A fair amount of the stuff that gets generated when you start a new game is random. Some things need to be checked before we can start the game properly:</p>
+    <ul>
+        <li> Baghatur needs to have a decent intrigue to be able to guarantee imprisonments later on. In the start I ran with I got 15, which is okay, and with the focus we can add 3 more.
+        <li> One of our sons need to have at least 8 learning.
+        <li> None of our children are <em>content</em>.
+    </ul>
+</section>
+
+<section>
+    <h2>Dude, where's my artifacts?</h2>
+    <p>Most pagan religions start with a tier-5 artifact, spawned in a random ruler inventory of matching religion. Other religions like Islam or Christianity have several artifacts, but not all are guaranteed to spawn. I systematically went through all relevant spawns and mapped out those who existed:</p>
+</section>
+
+<div class=map_overlay>
+    <img src=img/startmap.jpg>
+    <div class=map_icon style='background-image: url(img/yada_tashy.png); left: 90%; top: 19%;'><span>Yada Tashy</span></div>
+    <div class=map_icon style='background-image: url(img/axe_of_perkunas.png); left: 31%; top: 36%;'><span>Axe of Perkunas</span></div>
+    <div class=map_icon style='background-image: url(img/axe_of_perun.png); left: 29%; top: 46%;'><span>Axe of Perun</span></div>
+    <div class=map_icon style='background-image: url(img/sampo.png); left: 56%; top: 27%;'><span>Sampo</span></div>
+    <div class=map_icon style='background-image: url(img/branch.png); left: 26%; top: 92%;'><span>The Fetish of Souls</span></div>
+    <div class=map_icon style='background-image: url(img/gjallarhorn.png); left: 24%; top: 36%;'><span>Gjallarhorn</span></div>
+    <div class=map_icon style='background-image: url(img/bracelet_jeweled_gold.png); left: 24%; top: 30%;'><span>Andvaranaut</span></div>
+    <div class=map_icon style='background-image: url(img/mjolnir.png); left: 22%; top: 35%;'><span>Mjölnir</span></div>
+    <div class=map_icon style='background-image: url(img/pouch.png); left: 90%; top: 94%;'><span>The Tooth of Buddha</span></div>
+    <div class=map_icon style='background-image: url(img/cloak_of_mohammad.png); left: 66%; top: 54%;'><span>The Cloak of Mohammad</span></div>
+    <div class=map_icon style='background-image: url(img/heroic_banner_muslim.png); left: 15%; top: 65%;'><span>Holy Banner of Mohammad</span></div>
+    <div class=map_icon style='background-image: url(img/pouch.png); left: 45%; top: 63%;'><span>Hair from the Beard of Mohammad</span></div>
+    <div class=map_icon style='background-image: url(img/ark_of_the_covenant.png); left: 46%; top: 92%;'><span>Ark of the Covenant</span></div>
+    <div class=map_icon style='background-image: url(img/iron_crown_of_lombardy.png); left: 21%; top: 53%;'><span>Iron Crown of Lombardy</span></div>
+    <div class=map_icon style='background-image: url(img/saints_bone_femur.png); left: 24%; top: 58%;'><span>Bones of St. Peter</span></div>
+    <div class=map_icon style='background-image: url(img/crown_byzantine.png); left: 37%; top: 58%;'><span>Imperial Diadem</span></div>
+    <div class=map_icon style='background-image: url(img/seamless_robe_of_jesus.png); left: 20%; top: 45%;'><span>Seamless Robe of Jesus</span></div>
+    <div class=map_icon style='background-image: url(img/relic_box_simple.png); left: 35%; top: 68%;'><span>Chains of St. Peter</span></div>
+</div>
+
+<section>
+    <p>When we conquer these territories, we make sure to do what we can to grab the artifact as well. Most are fairly useless, since we're not staying as the required religion for long &ndash; if at all. It's just for the fun being a completionist.</p>
+</section>
+
+<section>
+    <h2>On bloodlines</h2>
+    <p>Bloodlines aren't random, but carefully analyzing them is still a good idea &ndash; some are critically endangered at the start of the game, and need special treatment to not die out.</p>
+    <h3>Parthian Blood</h3>
+    <p>There's actually multiple "strains" of this bloodline. One of them is only carried by a single person and his son; Sheikh Saman-Khuda of Balkh. Should he become unlanded, there's a significant risk that the line will die out. As such, we will need some vigilance to be able to prevent it.</p>
+    <h3>Blood of Ragnarr 'Loðbrók'</h3>
+    <p>Ragnarr is 2 years old at the start of the game, and will gain his bloodline by event later. Should he die, it's lost forever. His father is also quite likely to lose his lands to the perfidious Danes, which means Ragnarr will wind up god knows where.</p>
+    <h3>Merovingian Blood</h3>
+    <p>Prince Théoderic is the only person in the game with this bloodline, and he's a childless Frankish monk. There's a few ways of preserving it:</p>
+    <ul>
+        <li> Frankish revolts sometimes rally around him, since he has a claim on the throne. If such a revolt succeeds, he'll renounce his vows and become king. While being the most likely method to work, it's way too much RNG for us.
+        <li> A female player character can seduce him, producing an illegitimate but bloodline-inheriting heir. We're nomads however, which can't (easily) have female Khagans. He's halfway across the world as well and has the wrong religion, so it would be very hard anyway.
+        <li> With a lot of cash and a high relationship score, we can buy a favour from him. Calling in a favour bypasses the "wrong religion" invitation limit, so we can get him to our court and make him a nomad. He still won't marry since he's a monk, but due to an oversight being a monk doesn't prevent people from taking nomadic concubines! We'll give him as many as we can, ensuring that his bloodline survives.
+    </ul>
+</section>
+
+<section>
+    <h2>Day Zero</h2>
+    <p>There is a lot we need to do before unpausing!</p>
+    <ul>
+        <li> We set the focus to intrigue to maximize our chances of imprisoning people.
+        <li> We set ourselves as the guardian of our great-grandson to prevent the AI from messing him up.
+        <li> We set the various important characters around the world to "Special Interest", notifying us if they get in trouble.
+        <li> We grant independence to all our vassal clans. This means we can do whatever we want, since there's nobody to rebel against us.
+        <li> We position our various council members, e.g. start stealing tech from the Byzantines. This is largely irrelevant except for our marshal, who we will assign to suppress revolts in the county of Yeruslan just outside of our capital. You'll see why shortly.
+        <li> We will <em>not</em> get married just yet. Marriages either take time (for arranging them with foreigners) or result in a heavy prestige hit we can't afford.
+    </ul>
+    
+    <p>Let's do our first exploit! First, we split our clan into two, giving the new clan the county of Yeruslan:</p>
+    <img src=img/yeruslan.png>
+    
+    <p>Then, we imprison the new Khan. People will hate us for it, but who cares? There's nobody around that can do anything about it.</p>
+    <p>Imprisonment chances depend on a few things:</p>
+    <ul>
+        <li> Our state intrigue. This is quite high, since we've got a decent personal skill and spymaster.
+        <li> The new Khans state intrigue. This is absolutely trash, since he does not have a wife nor spymaster yet as he just spawned.
+        <li> The relationship with the new Khan. This starts out quite bad, but we can easily pump it up by giving him an important council position, honorary titles, and a gift of gold.
+        <li> A flat bonus, from parking our marshal on his capital.
+    </ul>
+    
+    <p>All in all, this should result in an (almost) guaranteed imprisonment. After being imprisoned, we can absorb the clan back again:</p>
+    <img src=img/absorb.png>
+    <p>The Khan will stay imprisoned, however. We can now banish him, grabbing the 100 gold he spawned with as well as any cash we gifted him:</p>
+    <img src=img/banish.png>
+    
+    <p>We're now 100 gold richer, and note that we haven't even unpaused yet. This can be done as many times as we want, but there is some cost: For each iteration, we lose 20 piety in total from the imprisonment and banishment. We also lose some population every time we split the clan, so that quickly drops to zero.</p>
+    <p>Another benefit from the exploit that's not just gold is that all the randomly generated courtiers that spawn in the new clan will be inherited by us. After a while we'll have a ton of people, and quite a few of them are talented councilors &ndash; and the better our councilors are, the likelier it is that our imprisonments succeed.</p>
+</section>
+
+<section>
+    <h2>Calling all Mary Sues</h2>
+    <p>If you bought the expensive limited edition of Crusader Kings II, you could add your own character to the game as an Easter-egg courtier somewhere. Some of these are pretty overpowered:</p>
+    <img src=img/gary_stu.png>
+    <p>Since everybody in our court hates us due to our extensive clan-banishment exploits, we need new councilors. Who better to hire than these guys? With all the cash we collected, we can afford sending invitations to the highest-scoring people in the world in each skill. We also invite as many people as possible with the "organizer" trait, as they improve the speed of our armies by 20% when commanding them.</p>
+    <p>There's a single Hellenic guy chilling in the Byzantine Empire at the start of the game, so let's invite him so that the religion doesn't die out.</p>
+    <img src=img/hellenic_dude.png>
+</section>
+    
+<section>
+    <h2>Mercenary rush</h2>
+    <p>With a large chunk of the remaining money, we hire all the "affordable" mercenaries &ndash; this is necessary since we previously tanked our population.</p>
+    <img src=img/mercs.png>
+    <p>We also release all our tributaries. This drains our prestige, but we can now go to war with them and grab some land. Our first task will be to reform our religion, which means conquering east- and westward until we've taken two additional holy sites, and northward to increase our moral authority from beating up nonbelievers.</p>
+    <p>After we've taken some land, we'll need to split our clan again so as to not create massive clan uprising revolts. These will only happen if you're below the maximum clan limit of nine however, so we split eight times as soon as possible and then never bother with it again.</p>
+    <p>Lastly we don't want to use mercenaries for very long due to their cost, just the first couple of years before we've amassed enough manpower to use horse archers instead.</p>
+</section>
+
+<section>
+    <h2>Cash rules everything around me</h2>
+    <p>A few years after the start of the game, random courtiers across the world will start amassing money, mostly from "steward steals money" events, like this fellow:</p>
+    <img src=img/money_man.png>
+    <p>Grabbing their cash is easy.</p>
+    <ol>
+        <li> First, invite them. Favours work fine here, since you'll be stealing the money back shortly anyway.
+        <li> Give them a tribe somewhere. This forces them into the tribal government type.
+        <li> Since you're a nomad, you have a free imprison/execute reason for everybody that's not a nomad. Use this to kill them. Nobody will care.
+        <li> Inherit all their stuff. This includes artifacts, though they are rare at the beginning of the game.
+        <li> Profit!
+    </ol>
+    <p>The loot you get from this isn't exactly infinite, but combined with pillaging it's enough for building temples on the holy sites we conquer.</p>
+</section>
+
+<section>
+    <h2>Status update</h2>
+    <p>It's been five years since the start of the game, and we've conquered a respectable amount of territory &ndash; exclusively with the "county conquest" CB, which is the best we have for now. Soon when the temples finish construction we will be able to reform the faith.</p>
+    <img src=img/conquests.png>
+</section>
+
+<section>
+    <h2>Tengri reformation</h2>
+    <p>And so, we reform our first religion.</p>
+    <ul>
+        <li> We pick the <em>Unyielding</em> nature; all the other choices have annoying drawbacks or is an inferior version of this (warmongering).
+        <li> We pick <em>Bloodthirsty Gods</em>, since there's a bloodline to be gained from sacrificing people with it.
+        <li> We pick <em>Ancestor Veneration</em>, since it creates bloodlines as well.
+        <li> We pick <em>Temporal</em> leadership, because why the hell would you not.
+    </ul>
+    <img src=img/tengri_reformation.png>
+    <p>This unlocks the <em>holy war</em> casus belli for us as well, which is quite important for our next task: conquering westward until we get into diplomatic range of all of Europe.</p>
+    <p>We also get our first couple of random artifacts &ndash; the Sampo and the Andvaranaut. The trick for grabbing them after conquering the location it's in is inviting the now-unlanded person who owns it, then doing the old "granting him a tribe before murdering him, making you his legal successor"-trick.</p>
+    <img src=img/sampo_man.png>
+</section>
+
+<section>
+    <h2>More bordergore</h2>
+    <p>Another five years have passed; we keep conquering things while we wait for our great-grandson to come of age. We keep <em>hunting</em> active as well, granting us a health bonus and avoiding an inconvenient early death.</p>
+    <img src=img/conquests2.jpg>
+</section>
+
+<section>
+    <h2>Quadruple cheeseburger</h2>
+    <p>For the next couple of steps, we need to convert religions. This is normally impossible as the head of one, so we use a trick:</p>
+    <p>Invite a random 'holy man', grant him the Tengri Church, then a kingdom. You can now convert religions freely. After you're done, just smash the "Begone!" button and he'll die, returning the titles to you.</p>
+    <img src=img/begone.png>
+    
+    <p>We convert back and forth to Iconoclast a couple of times until our prestige is negative.</p>
+    <img src=img/conversion.png>
+    
+    <p>Then, fail to imprison a vassal clan and immediately surrender. This makes us abdicate to our son.</p>
+    <img src=img/revolt.png>
+    
+    <p>After doing that three times, we become our great-grandson (who coincidentally turned out quite okay). We had to initially tank our prestige, since the highest-prestige relative inherits which means our initial character would just have re-inherited the title every time.</p>
+    <img src=img/obadiah.png>
+    
+    <p>Now for a little more hardcore exploit. We convert to a civilized religion, then get a Pagan concubine, then secretly convert to her religion and back again. This can be done indefinitely, and will drop our prestige by 1000 every time.</p>
+    <p>We gotta do this a shitload of times, so let's script the mouse to do it for us and go grab a coffee while it clicks away.</p>
+    <video autoplay loop muted><source src='img/haxloop.mp4' type='video/mp4'></video>
+    
+    <p>After about an hour of clicking, the prestige integer-overflows to positive 2 million 😎.</p>
+    <img src=img/prestige.png>
+</section>
+<section>
+    <h2>The great bloodline slide</h2>
+    <p>Now we can grab some bloodlines! The first one is easy. Simply sacrifice some of the many prisoners we've taken during our conquests (using blood-sacrifice, naturally!) and the Silent Killer triggers quickly.</p>
+    <img src=img/silent_killer.png>
+
+    <p>Then we abdicate again to our father, and do the same prestige loop. Note that there are theoretically better types of "infinite negative prestige"-style exploits, but they all create entries in the chronicle which really bloats the save file.</p>
+    <p>This time, we conquer 15 enemies – simply fail to imprison the same tribesman over and over, as it only takes one day to win those wars – thus grabbing another bloodline, the Warrior Philosopher. This bloodline requires a learning of 8, which is why we needed one of our sons to have that.</p>
+
+    <img src=img/warrior_philosopher.png>
+
+    <p>Another abdication, another conquest bloodline.</p>
+    <img src=img/bloodhound.png>
+
+    <p>The final crafted bloodline, as we're our original character again. For each character, we have made sure to torture a couple of prisoners (so we get the <em>cruel</em> trait), and then sacrifice a few to get <em>Haemophiliac</em>. By doing this, we guarantee that our characters are all eligible for pagan sainthood status.</p>
+    <img src=img/vile_blood.png>
+</section>
+
+<section>
+    <h2>Ah shit, here we go again</h2>
+    <p>We want to be our great-grandson again, so we stop <em>hunting</em> and do the riskiest "Worship the Ancestors"-option &ndash; the one where you rip out your eye. We die about four seconds later, and everything works as intended:</p>
+    <img src=img/ancestor0.png>
+
+    <p>Then we kill ourselves again, this time by a careless duel. Another bloodline triggers.</p>
+    <img src=img/ancestor1.png>
+    
+    <p>I'm not killing the third person, however &ndash; I don't have access to a fast method of suicide for him, and the chance of gaining a third ancestor bloodline is quite low anyway. I abdicate instead. Now we're playing as Obadiah again, but with seven bloodlines!</p>
+</section>
+
+<section>
+    <h2>Blood for the blood god</h2>
+    <p>By sacrificing the remaining prisoners, we grab the Harbinger of the Blood Gods bloodline. Cool.</p>
+    <img src=img/scarlet_seeds.png>
+    
+    <p>In other blood-releated news, we also start the breeding program. By inviting people with historical bloodlines and marrying them together matrilineally, we combine them into one. Landless courtiers breed very slowly, so we should give them a county each to do their business in.</p>
+    <img src=img/breeding.png>
+</section>
+
+<section>
+    <h2>OK pop boomer</h2>
+    <p>If a nomad completely burns down a province while having the <em>diligent</em> trait, you get a "population boom" modifier in your capital, increasing population growth by 8%. This stacks. We're now at our population cap pretty much all the time, enabling easy invasions whenever we wish.</p>
+    <img src=img/stack.png>
+</section>
+
+<section>
+    <h2>Raiding</h2>
+    <p>We're basically done with Tengriism now. Let's convert to Norse instead and start raiding. A neat benefit from doing a massive raiding campaign is that you'll get a ton of "thralls" modifiers in your capital, which speeds up construction a great deal. If we combine that with a good steward and a Chinese architect, the build time drops into the negatives and all buildings complete construction in one day.</p>
+    <img src=img/build_time.png>
+    
+    <p>After having raided 200 holds, we finally grab the Sea King bloodline. Very annoying, this one! There's another exploit we'll use here &ndash; since "Sea King" is inactive if your current religion isn't the religion of the person who created it, we quickly convert to Hellenic before pressing the OK button. This causes the bloodline to count as Hellenic, even though they can't normally get it. Pretty neat.</p>
+    <img src=img/sea_king.png>
+</section>
+
+<section>
+    <h2>The stallion who exploits the world</h2>
+    <p>It's the ninth century now. We've been using our invasion CBs liberally, conquering a good swathe of the map and cleaning up bordergore. Note the giant amount of money we get from pillaging everything.</p>
+    <img src=img/status.jpg>
+
+    <p>Is there a sweeter sound than the noise of executing 704 people at the same time? I think not.</p>
+    <img src=img/execution.png>
+    
+    <p>The viking age starts. Too bad they are all dead already. Well, except Ragnarr Loðbrók.</p>
+    <img src=img/vikings.png>
+    
+    <p>With the enormous amount of cash we have, let's start wasting some on a few great works.</p>
+    <img src=img/gardens.png>
+</section>
+
+<section>
+    <h2>Jew-Jitsu</h2>
+    <p>By conquering Palestine we can convert to Judaism and create Israel, triggering yet another bloodline. Note that this decision is bugged, and you can trigger it as many times as you wish before closing the event window. This results in a theoretically infinite amount of bloodlines, but I'll only pick one.</p>
+    <img src=img/israel.jpg>
+    <p>The Eagle Warriors legendary journey triggers. This unlocks a progress bar that grows a little every time one of the members does anything related to the society, like dueling or completing quests:</p>
+    <img src=img/progress.png>
+    <p>Unfortunately it's pretty slow going pumping that number up. Is there a better way? Turns out there is &ndash; first, since we have about 1.5K people in our court, there's been a whole lot of kids growing up here.</p>
+    <p>When that happens there's a very likely event that triggers for the lord where you can give the kid <em>ambitious</em> in exchange for the kid turning into your rival. We've picked that option every time, netting us a rather large amount of them:</p>
+    <img src=img/rivals.png>
+    <p>Let's pick a random guy among them and duel him now. You can only duel one person every 3 months, netting you an increase of 1% progress &ndash; that's a total of 25 years if we're doing all the work ourselves. Ain't nobody got time for that. Notice how the legend bar fills up immediately when the duel is accepted? Just kill the guy before the duel starts, and you get fast risk-free legend XP.</p>
+    <img src=img/duel_prep.png>
+    <p>If we run out of rivals we can convert to Yazidi. That caliph can excommunicate whomever he wants, which means an infinite amount of duel targets.</p>
+    <p>First we'll duel the 20 shittiest rivals ourselves however, as we need "ruthless" duel experience for the <em>duelist</em> bloodline, and that requires us to do 20 "real" kills.</p>
+</section>
+
+<section>
+    <h2>Romam esse delendam</h2>
+    <p>While waiting for our duels, we need to do something that won't keep us at war for extended periods, as you can't duel during them. There's a pretty boring task I've been holding off: subjugating the Byzantines. After that's done, we've grabbed the vassalage of the Varangian guard and Scholae Palatinae.</p>
+    <p>Another benefit of subjugation as opposed to invasion is that we can imprison and execute everybody, steadily inheriting their titles instead of just grabbing the land. This means we get their gold, techpoints, and artifacts as well, at the cost of having to put down a few rebellions. It's mind-meltingly boring, but results in frequent periods of short peace where we can duel.</p>
+    <img src=img/subjugation.jpg>
+</section>
+
+<section>
+    <h2>Towards world domination</h2>
+    <p>Judaism is rather unique in that their holy wars can trigger before the year 900. Joining these is convenient, as we don't have to siege down every county to clear out the old inhabitants.</p>
+    <img src=img/holy_war.png>
+    <p>We conquer all the way down to lake chad, which naturally every respectable god-king must own.</p>
+    <img src=img/lake_chad.jpg>
+    <p>Now for the rest of Asia. Tibet is a priority, as their emperor refuses to part with any of his children for my breeding project. Burning his empire to the ground will surely change his mind.</p>
+    <img src=img/tibet.jpg>
+    <p>Then we kick out the Chinese. The trick to winning these wars is baiting their armies into splitting up and killing them one by one.</p>
+    <img src=img/protectorate.jpg>
+    
+    <p>While all that is going on, we start our legendary journey. You can specify if you want a bloodline for only yourself or every survivor, and I pick the former. None of the others are young enough or have kids that may keep their lines alive.</p>
+    <img src=img/umayyad_bro.png>
+    
+    <p>And so, we net another bloodline. Full disclaimer: I died once during this and had to reload an older save. 😢</p>
+    <img src=img/blood_legend.png>
+    
+    <p>Then another Tengri clannie dies, and I can venerate him. He's got kids I can integrate into my breeding project, so we say yes. It's kinda funny that I'm not even Tengri and I still get these events because I own their church.</p>
+    <img src=img/ancestor2.png>
+    
+    <p>And so we die from some disease, and our youngest son takes over. We never managed to get the <em>duelist</em> bloodline, you can't win them all.</p>
+    <img src=img/conquests3.jpg>
+    
+    <p>World conquest complete!</p>
+    <img src=img/wc.jpg>
+</section>
+
+<section>
+    <h2>Girl power</h2>
+    <p>We want our God-Emperor to have the <em>sayyid</em> trait, but that is only inherited in the male line. This means we need to get a woman to inherit our stuff, who can then marry a sayyid and breed it into our line. We also dump some of our stored techpoints into <em>tolerance</em> and enable absolute cognatic inheritance.</p>
+    <img src=img/sayyid.jpg>
+    <p>To improve her prestige so that she'll inherit before our boys, we give her a mercenary band. It's quite large.</p>
+    <img src=img/band.jpg>
+</section>
+
+<section>
+    <h2>Outremer</h2>
+    <p>While we're waiting for time to progress, we grab another bloodline by converting to Catholicism and forming the Empire of the Outremer.</p>
+    <img src=img/outremer.jpg>
+    <p>As well as another bloodline, this time from the Wolf Warriors.</p>
+    <img src=img/legend.png>
+</section>
+
+<section>
+    <h2>Downtime</h2>
+    <p>We're a woman now; that means any bloodlines we get with this character won't normally get inherited by men. That means we can't do much except wait around.</p>
+    <img src=img/sarikel.jpg>
+    <p>The one thing we can do is take the time to grab the <em>mystic</em> lifestyle trait, which means we can build a fountain of youth that extends our characters lifespans.</p>
+    <img src=img/fountain.png>
+    
+    <p>Finally we become our son. Our breeding project is almost complete, now we only have to matrilineally marry this girl we've been preparing and all our children will have all the historical bloodlines.</p>
+    <img src=img/yavdi.jpg>
+</section>
+
+<section>
+    <h2>A Tsar, a Basileus, and a Khagan walks into a bar...</h2>
+    <p>We have no more need for nomadism, so let's settle as tribal.</p>
+    <p>First however, we create some "toy" emperors, like this one. We need three: one that's Russian, one Greek, and one Mongol.</p>
+    <img src=img/emperors.jpg>
+    <p>Clans..? Where we're going we don't need clans. We absorb the lot.</p>
+    <img src=img/clanmerge.png>
+    <p>Finally, we settle down (and immediately disband that huge doomstack we get). Notice that we're a king now, not an emperor.</p>
+    <img src=img/army.jpg>
+</section>
+
+<section>
+    <h2>Culture conversions</h2>
+    <p>As a king, we can create other kingdoms (like Navarra here) and change our capital to its historical capital for free.</p>
+    <img src=img/navarra.jpg>
+    <p>That means the Russian hispanian emperor we prepared previously will accept our vassalization:</p>
+    <img src=img/slavsquat.png>
+    <p>This means we can convert to his culture:</p>
+    <img src=img/liege_culture.png>
+    <p>And then immediately form the Slavic union, netting us another bloodline!</p>
+    <img src=img/slavic_union.png>
+</section>
+
+<section>
+    <h2>Chinese shenanigans</h2>
+    <p>Let's invade China...</p>
+    <img src=img/invade_china2.png>
+    <p>... and then immediately surrender. This shatters our realm, but since we don't have any vassals it simply destroys our king &amp; emperor titles. We're now duke of the Sky-Temple, which is kinda cool.</p>
+    <img src=img/china_fail.jpg>
+</section>
+
+<section>
+    <h2>Greek</h2>
+    <p>By doing the same emperor-liege conversion trick as with the Russians, we become Greek. This time we restore Byzantium.</p>
+    <img src=img/byz.png>
+    <p>Now we can dump all the techpoints we gained by burning down the entire world. It's quite a lot.</p>
+    <img src=img/tech.jpg>
+    <p>All the "provinces restored" events trigger simultaneously.</p>
+    <img src=img/provinces_restored.png>
+    <p>While we're at it, let's mend the schism.</p>
+    <img src=img/mending.png>
+    <p>Here's an annoyance: all provinces in the world simultaneously get the "prospering" event, enormously lagging up the game. The thick black border you see around that event window is the combined drop shadows of over 1000 events.</p>
+    <img src=img/thicc.png>
+</section>
+<section>
+    <h2>Shortening the way</h2>
+    <p>Then we die, and our son takes over. He'll be the father of our future God-emperor, which means he'll need at least one positive trait to breed forward, like <em>strong</em> here.</p>
+    <img src=img/bulan.jpg>
+    <p>Rejoice! The future God-Emperor, Kwisatz Haderach, Pantocrator, Bringer of Benefit, Irbis Ashina is born.</p>
+    <img src=img/irbis.jpg>
+    <p>Our first extra trait is fairly easy. By converting to Catholicism we can get the Pope to baptize him.</p>
+    <img src=img/baptism.png>
+</section>
+<section>
+    <h2>Pontiflexing</h2>
+    <p>Now we reform the Hellenic faith; a stable, civilized religion suitable for an eternal empire.</p>
+    <img src=img/pontiflex.png>
+    <p>By getting China to stomp us beforehand, our top title is now the Collegium Pontificum. Pretty cool.</p>
+    <img src=img/pontifex_shield.png>
+    <p>We form the Olympians, and immediately start the legendary journey. Hopefully it'll complete when both us and our son are members, which will net us two bloodlines for the price of one.</p>
+    <img src=img/olympians.jpg>
+    <p>We convert our culture to Mongol, then elevate our title to an empire &ndash; giving us this eye-bleeding color:</p>
+    <img src=img/pontifex_empire.jpg>
+</section>
+
+<section>
+    <h2>Scumming time</h2>
+    <p>Our future God-Emperor must naturally be a "child of destiny". This is however impossible to pull of if we're not savescumming, so that's exactly what I'm going to do &ndash; first, we make Irbis inherit while he's still underage. This boosts the chances, further multiplied by 9 because we're <em>strong</em> and <em>attractive</em>, and again by 3 because of our skilled parent.</p>
+    <p>Still, the chances are quite low. To rectify this, I script the mouse to constantly click, then position it over the first option of all events while the game is running at maximum speed, SIGKILL-ing the game and restarting whenever Irbis reaches 8 years old.</p>
+    <p>Finally, the event triggers:</p>
+    <img src=img/cod.png>
+    <p>We also get the "Wolf Child" event, purely by accident:</p>
+    <img src=img/wolf_child.png>
+    <p>And so, we're of age, ready to rule:</p>
+    <img src=img/irbis_adult.jpg>
+    <p>Well, not yet. First we abdicate back to our father, and send Irbis out as a mercenary to get the <em>adventurer</em> trait. Then we inherit back again.</p>
+    <img src=img/irbis_merc.jpg>
+    
+<section>
+    <h2>KHAAAAN!</h2>
+    <p>By restarting the game without the <em>Horse Lords</em> expansion, tribals can take the "Become the Greatest of Khans" decision.</p>
+    <img src=img/greatest_khan.jpg>
+    <p>Making us Genghis Khan! Neat. The bonuses for this decision are really good: +25% morale and -5% revolt risk.</p>
+    <img src=img/mongol_empire.jpg>
+    <p>Then we immediately culture-convert back to Greek and recreate Byzantium for a second time.</p>
+    <img src=img/greeks_are_back.jpg>
+    <p>... then the Roman Empire. This nets us another bloodline.</p>
+    <img src=img/esto_perpetua.png>
+</section>
+
+<section>
+    <h2>Taking care of business</h2>
+    <p>We want to complete all the focus miniquests, so we need to grant independence to a dude for a short while so that the "business" quest can have a foreign realm to target.</p>
+    <img src=img/new_realm.jpg>
+    <p>Then we convert to Zoroastrianism and become the Saoshyant.</p>
+    <img src=img/benefit.png>
+    <p>We have a daughter. We'll get back to her later.</p>
+    <img src=img/daughter.png>
+    <p>The Hellenic warrior lodge quest completes with our dad, netting us two new bloodlines.</p>
+    <img src=img/double_bloodline.png>
+</section>
+
+<section>
+    <h2>An old friend for dinner</h2>
+    <p>The plague strikes in the east, which is an excellent opportunity to grab the <em>cannibal</em> trait. This requires us to have the feudal government type, so we start by doing a dual-abdication where we grant ourselves a castle before doing the second abdication, turning us feudal.</p>
+    <p>We <em>could</em> have used the "settle as feudal" decision, but that would have created two extra holdings in every county of the world, and that causes so much lag that the game becomes unplayable.</p>
+    <img src=img/pestis.png>
+    <p>We move our capital to the a stricken county. Now we can do the "shut the gates" decision, causing the "lack of food" counter to start ticking down.</p>
+    <img src=img/world_edge.png>
+    <p>Having a lot of gluttons around means somebody will sooner or later raid the pantry. As revenge you can eat him, so let's do just that:</p>
+    <img src=img/yum.png>
+    
+    <p>As a cannibal, we can eat prisoners. When you eat people who controls a religion (e.g. the Pope) you gain some of their traits &ndash; by granting the dinner-to-be the Tengri church, we can guarantee that it triggers. Now we're a <em>genius</em>, too!</p>
+    <img src=img/hannibal.png>
+</section>
+
+<section>
+    <h2>Hail <strike>Satan</strike> Bacchus</h2>
+    <p>Let's leave the Olympian Champions and start the Bacchants. By doing this we gain a demonic familiar, as well as several demonic blessings the longer we wait.</p>
+    <img src=img/hail_satan.png>
+    
+    <p>How do you get unruly teenagers to listen to you? By brainwashing them with satanic magic, of course!</p>
+    <img src=img/brainwash.png>
+</section>
+
+<section>
+    <h2>What can change the nature of a man?</h2>
+    <p>Now would be an excellent time for us to gain immortality, which means another extremely boring savescumming loop before that event chain triggers:</p>
+    <img src=img/eternal_life_quest.png>
+    
+    <p>The skill of the councilor you send out determines the chance that the mystic is a fraud. Ironically in this case we send out our chancellor Idunn, who herself is a mystic from the same quest chain that some other AI character failed.</p>
+    <img src=img/idunn.png>
+    <p>And so, we succeed. This makes us and Idunn (the seconds one!) immortal. Neato.</p>
+    <img src=img/immortal.png>
+</section>
+
+<section>
+    <h2>I swear officer, she's actually an immortal demigod from the middle ages</h2>
+    <p>Our God-emperor naturally needs a suitable wife, and some random debutante certainly won't do. Our daughter has all of our massive amount of bloodlines, so let's marry her. Nothing weird with that. Coincidentally, parent-child marriages in CK2 is a lot less incest-causing than similar levels of consanguinity due to the way the game calculates common ancestors.</p>
+    <p>But first, let's prepare her skills. We begin by doing a quick abdication and instantly forming the stoics.</p>
+    <img src=img/rhodante.png>
+    <p>Then grabbing <em>cannibal</em> just like our dad; then and eating Idunn, our dads mystic. That gives us immortality as well! The next two meals adds <em>strong</em> and <em>genius</em> to the pile.</p>
+    <img src=img/immortal2.png>
+    <p>While waiting around for Irbis to gain the <em>Renowned Physician</em> trait (which never happened, as I got bored of waiting for it) we cure our cannibalism-induced insanity by converting to Islam and doing the Hajj.</p>
+    <img src=img/sane_in_the_membrane.png>
+    <p>And so we abdicate back, convert to Zoroastrianism, and get married.</p>
+    <img src=img/happy_couple.png>
+</section>
+
+<section>
+    <h2>Picking up the final pieces</h2>
+    <p>Now we get to the last stuff we can. First is the various pagan religions we can reform; while we convert to the religion we can join its warrior lodge and pick up the special trait for it.</p>
+    <img src=img/zun_reform.png>
+    <p>We put off curing our insanity until we've been Norse for a while. This triggers the "Killing Cthulhu" event chain, netting us a permanent "Godslayer" buff.</p>
+    <img src=img/godslayer.png>
+    
+    <p>We then forge a claim on Alexander's lineage. We had to do this after becoming a Child of Destiny, as any bloodline that makes the holder more ambitious (such as Alexander's) prevents the CoD event from triggering.</p>
+    <img src=img/alexander.png>
+    <p>Let's get rid of <em>tribal</em> for good, and settle down. Since we've conquered India, we can immediately become Samrat Chakravartin. This decision is bugged just like the Israel decision, and can be picked an infinite amount of times; I unintentionally did it twice since I didn't know about it at first.</p>
+    <img src=img/india.jpg>
+    <p>To ease the lag, we give out a kingdom each for all our children. Our massive fertility boost from buffs, artifacts, and wonders ensures we constantly have kids, and they never die early due to the double "Immortal Blood" bloodlines that grant extra health.</p>
+    <img src=img/vassals.jpg>
+    <p>Then we keep our capital parked in India for a while until the "Reincarnation of Ashoka" event chain triggers.</p>
+    <img src=img/ashoka.png>
+    
+<section>
+    <h2>So this is the power of ultra instinct</h2>
+    <p>Let's invade China now. Our soldiers are so overpowered with us as a general that we can park a couple of them on the Chinese spawn point, beating their entire army in one go when it appears.</p>
+    <p>They have 33 times the men, but we still win handily:</p>
+    <img src=img/victory.png>
+    <p>And so, we've installed our son as the Chinese emperor.</p>
+    <img src=img/achina.png>
+</section>
+<section>
+    <h2>Fin.</h2>
+    <p>The only thing left to do now is to spend the remaining years grinding the remaining pagan lodge traits and various minor buffs (e.g. "Multilingual"). The lag is getting rather atrocious however, so I end the game here.</p>
+    <p>I leave you with the final result of our God-Emperor project. Cheerio!</p>
+    <img src=img/the_end.png>
+</section>
